@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="controllers/userController.js"></script>
+  
+</head>
+<body>
+  
+<div class="container" ng-controller="myCtrl" ng-init="user={};options={}">
+<div ng-hide="a">
+  <h1>Welcome User</h1>
+<button class="btn btn-primary" ng-click="startTest()" >Start Test</button>
+</div>
+<div ng-show="a">
+<table class="table">
+	<tr><td>{{questionsList[current].question}}</td></tr>
+	<tr ng-show="questionsList[current].type=='single choice'" ng-repeat="x in questionsList[current].options"><td><input type="radio" name="option" ng-model="user.option" ng-value="x"/> {{x}}</td></tr>
+	<tr ng-show="questionsList[current].type=='multi choice'" ng-repeat="x in questionsList[current].options"><td><input type="checkbox" ng-model="options[x]" ng-value="x">{{x}}</td></tr>
+	<tr><td><button ng-show="current > 0" class="btn btn-primary pull-left" ng-click="prev()" >prev</button></td><td><button ng-show="current<(size-1)" class="btn btn-primary pull-right" ng-click="next(user)" >Next</button></td><td><button class="btn btn-primary pull-right" ng-click="submit()" ng-show="current==(size-1)" >submit</button></td></tr>
+
+</table>
+
+</div>
+
+
+
+
+</div>
+
+</body>
+</html>
