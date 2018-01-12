@@ -3,7 +3,7 @@ var Controller=require('./../controllers/controller');
 //console.log("Controller : ", Controller);
 var router=express.Router();
 router.route('/hello').get(Controller.sayHello);
-//router.route('/').post(Controller.saveUsers);
+router.route('/').post(Controller.saveUsers);
 router.route('/login').get(Controller.loginPage);
 router.route('/validateUser').get(Controller.userValidate);
 router.route('/userPage').get(Controller.userPage);
