@@ -1,6 +1,9 @@
 {
   "name": "exam",
   "version": "1.0.0",
+  "engines": {
+    "node": "7.7.4"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {

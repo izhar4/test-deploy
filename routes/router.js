@@ -1,4 +1,3 @@
-console.log("router  >>>>>>>>>>>>>>>>>>>>>.")
 var express=require('express');
 var Controller=require('./../controllers/controller');
 //console.log("Controller : ", Controller);

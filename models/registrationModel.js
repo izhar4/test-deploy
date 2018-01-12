@@ -1,5 +1,5 @@
 var mongoose=require('mongoose');
-var db=mongoose.connect("mongodb://localhost/examDb4",{useMongoClient: true,});
+var db=mongoose.connect( process.env.MONGODB_URI ||"mongodb://localhost/examDb4",{useMongoClient: true});
 var Schema=mongoose.Schema;
 
 
